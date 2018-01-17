@@ -1,0 +1,45 @@
+<% include partials/header %>
+<div class="title container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>Front-End Interview Test // Stefano Veltri</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% if(json.Response != "False" ){  %>
+          <% for (let i = 0; i <= 9; i++) { %>
+             <div class="apt col-md-4 col-sm-6">
+               <% if(json.data[i].purpose == 0 ){  %>
+                   <p class="apt-ribbon">Mieten</p>
+               <% } else { %>
+                   <p class="apt-ribbon">Kaufen</p>
+               <% } %>
+               <img class="img-fluid" src="<%= json.data[i].advertisementAssets["0"].advertisementThumbnails.inventory_m.url %>">
+               <div class="apt-infos">
+                 <h2 class="apt-name"><%= json.data[i].title %></h2>
+                 <h3 class="apt-street"><%= json.data[i].realestateSummary.address.postalCode %> <%= json.data[i].realestateSummary.address.street %> / <%= json.data[i].realestateSummary.address.city %></h3>
+                 <div class="apt-details">
+                   <div class="apt-price">
+                     <% if(json.data[i].purpose == 0 ){  %>
+                       <h4><%= json.data[i].advertisementPrice.baseRent %> €</h4>
+                     <% } else { %>
+                       <h4><%= json.data[i].advertisementPrice.sellPrice %> €</h4>
+                     <% } %>
+                   </div>
+                   <div class="apt-space">
+                     <h4>ab <%= json.data[i].realestateSummary.numberOfRooms %> Zimmer | </h4>
+                     <h4>ab <%= json.data[i].realestateSummary.space %> m<sup>2</sup></h4>
+                   </div>
+                 </div>
+               </div>
+             </div>
+          <%  }  %>
+    <% } else { %>
+        <h2>No apartments found 😞</h2>
+    <% } %>
+  </div>
+<div>
+<% include partials/footer %>

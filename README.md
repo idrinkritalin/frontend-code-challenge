@@ -1,4 +1,4 @@
-# Front-End Interview Test
+# Front-End Interview Test - Stefano Veltri
 
 This is a simple front-end code challenge created to serve two purposes:
 
