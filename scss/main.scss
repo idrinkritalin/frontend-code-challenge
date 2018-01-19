@@ -1,0 +1,111 @@
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+$font-stack: 'Montserrat', sans-serif;
+$main-font-color: #393939;
+$secondary-font-color: #AFAFAF;
+
+//colors
+$bg-color: #ffffff;
+$ribbon-border-color: rgba(175,175,175,0.75);
+
+//mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($top, $right, $bottom, $left, $color) {
+  -webkit-box-shadow: $top $right $bottom $left $color;
+     -moz-box-shadow: $top $right $bottom $left $color;
+      -ms-box-shadow: $top $right $bottom $left $color;
+          box-shadow: $top $right $bottom $left $color;
+}
+
+@mixin transition($sec) {
+  -webkit-transition: all $sec;
+     -moz-transition: all $sec;
+      -ms-transition: all $sec;
+          transition: all $sec;
+}
+
+@mixin translateY($px) {
+  -webkit-transform: translateY($px);
+     -moz-transform: translateY($px);
+      -ms-transform: translateY($px);
+          transform: translateY($px);
+}
+
+//style
+body {
+  font-family: $font-stack !important;
+  color: $main-font-color !important;
+}
+
+.title {
+    margin: 20px 0;
+}
+
+.apt {
+  margin-bottom: 25px;
+  @include transition(0.5s);
+}
+
+.apt:hover {
+  @include translateY(10px);
+}
+
+.apt-ribbon {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    background: $bg-color;
+    padding: 5px;
+    color: $secondary-font-color;
+    font-size: 0.8rem;
+    @include border-radius(1px);
+    @include box-shadow(4px, 4px, 4px, 0, $ribbon-border-color);
+}
+
+.apt-infos {
+  border: 1px solid #E5E5E5;
+  padding: 20px;
+
+  h2, h3, h4  {
+    font-size: 0.9em;
+    line-height: 1.7;
+  }
+}
+
+.apt-name {
+  min-height: 73px;
+}
+
+.apt-street {
+  color: $secondary-font-color;
+}
+
+.apt-details {
+  padding: 30px 0 10px 0;
+}
+
+.apt-price {
+  display: inline-block;
+  width: 28%;
+}
+
+.apt-space {
+  display: inline-block;
+  width: 70%;
+  text-align: right;
+
+  h4 {
+    display: inline-block;
+    font-weight: 200;
+  }
+}
+
+footer {
+    margin: 20px 0;
+}

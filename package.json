@@ -6,10 +6,16 @@
   "repository": "git@github.com:OskHa/frontend_interview_test.git",
   "author": "Tejas Kumar <tejas.kumar@mcmakler.de>",
   "license": "MIT",
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/main.scss public/css/app.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
   "devDependencies": {
     "body-parser": "^1.17.2",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.14.11",
     "request": "^2.81.0"
   }
 }
