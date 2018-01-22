@@ -1,10 +1,10 @@
 {
-  "name": "frontend_interview_test",
-  "version": "1.0.0",
-  "description": "An interview test for Front-End Development job candidates",
+  "name": "Product list fetching from API",
+  "version": "1.1.0",
+  "description": "",
   "main": "app.js",
-  "repository": "git@github.com:OskHa/frontend_interview_test.git",
-  "author": "Tejas Kumar <tejas.kumar@mcmakler.de>",
+  "repository": "https://github.com/idrinkritalin/frontend-code-challenge",
+  "author": "Stefano Veltri <stefano@idrinkritalin.it>",
   "license": "MIT",
   "scripts": {
     "build-css": "node-sass --include-path scss scss/main.scss public/css/app.css",

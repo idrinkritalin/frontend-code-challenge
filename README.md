@@ -1,6 +1,6 @@
-# Front-end // Stefano Veltri
+# Product list fetching from API
 
-As requested the assignment that creates a grid of apartments fetching data from your from your APIs.
+Framework that creates a grid of products fetching data from given APIs.
 
 *bonus*
 Added node-sass + nodemon npm to watch and compile SCSS without using gulp.js!
